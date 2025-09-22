@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* =========
+   设计令牌
+   ========= */
+:root {
+  /* 🎨 品牌色 */
+  --color-brand: oklch(56.543% 0.22153 12.456);
+  --color-success: oklch(70% 0.2 150);
+  --color-warning: oklch(75% 0.25 80);
+  --color-error: oklch(60% 0.25 20);
+
+  /* ⚪ 中性色 */
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+
+  /* 🅰️ 字体 */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  /* 📏 间距基准 (8px scale) */
+  --spacing-unit: 8px;
+}
+
+/* =========
+   Tailwind 主题映射
+   ========= */
+@theme {
+  /* 颜色 */
+  --color-brand: var(--color-brand);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+
+  /* 字体 */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* 间距 */
+  --spacing-1: var(--spacing-unit); /* 8px */
+  --spacing-2: calc(var(--spacing-unit) * 2); /* 16px */
+  --spacing-3: calc(var(--spacing-unit) * 3); /* 24px */
+  --spacing-4: calc(var(--spacing-unit) * 4); /* 32px */
+}
+
+/* =========
+   可选：全局 reset 或基础样式
+   ========= */
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1 {
+    @apply text-4xl font-bold text-brand;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold text-foreground;
+  }
+}
